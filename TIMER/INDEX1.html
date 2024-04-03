@@ -1,0 +1,356 @@
+<html>
+    <head>
+        <title>Countdown Timer</title>
+<style>
+  body {
+    margin: 4rem auto;
+    text-align: center;
+    background:url(https://images.unsplash.com/photo-1601458498849-86bf5b9f8bc9?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D) no-repeat;
+    background-size: cover;
+    font-family: 'Poppins', sans-serif;
+}
+
+h1 {
+    color: #d7dadb;
+    font-size: 100px;
+}
+
+table {
+    margin: auto;
+}
+
+th {
+    color: #FFFFFF;
+}
+
+input {
+    font-size: 20px;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.but {
+    min-width: 120px;
+    margin: 20px 10px;
+    padding: 10px 10px;
+    font-size: 20px;
+    background-color: rgba(25, 25, 26, 0.283);
+    border-radius: 5px;
+    border:none;
+    color: rgb(255, 255, 255);
+    box-shadow: 0px 1px 7px rgba(12, 12, 12, 0.26);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.25s;
+}
+.but:hover{
+     box-shadow: 0 0 5px rgba(24,34,38,255), 0 0 0px rgba(24,34,38,255), 0 0 0px rgba(24,34,38,255), 0 0 50px rgba(24,34,38,255), 00 0px rgba(24,34,38,255);
+}
+
+.countdown {
+    display: flex;
+    justify-content: center;
+}
+
+.heading {
+    color: #F5F5F5;
+    font-size: 18px;
+    text-transform: uppercase;
+}
+
+.time {
+    background-color: rgba(240, 240, 240, 0.4);
+    color: #FFFFFF;
+    font-size: 100px;
+    box-shadow: 0px 2px 7px rgba(16, 110, 203, 0.25);
+    width: 150px;
+    margin: 0 10px;
+    border-radius: 0.5rem;
+}
+
+.title {
+    padding: 2rem 1rem;
+    margin: 1rem 24rem ;
+    background-color:  rgba(246, 242, 242, 0.274);
+    border-radius: 0.5rem;
+    font-size: 3rem;
+    color: rgba((45, 154, 227, 0.6)0.6);
+}
+
+.full body 
+{    padding: 1rem 1rem;
+    margin: 1rem 24rem ;
+    background-color:  rgba(246, 242, 242, 0.274);
+    border-radius: 0.5rem;
+    font-size: 2rem;
+    color: rgba((45, 154, 227, 0.6)0.6);
+}
+
+.all {
+    width: 100%;
+    position: relative;
+    text-align: left;
+    margin-left: 50px;
+}
+
+.ABC {
+    background: #dddddd76;
+    margin: 0px;
+    WIDTH:315PX;
+    height:0px;
+    margin-left: 475PX;
+    border-radius: 10%;
+    background-color: black;
+  }
+  
+  .timer {
+    font-family: sans-serif;
+    display: inline-block;
+    padding: 24px 32px;
+    border-radius: 30px;
+    background: rgba(255, 255, 255, 0.432);
+  }
+  
+  .timer__part {
+    font-size: 36px;
+    font-weight: bold;
+  }
+  
+  .timer__btn {
+    width: 50px;
+    height: 50px;
+    margin-left: 16px;
+    border-radius: 50%;
+    border: none;
+    color: white;
+    background: #8208e6;
+    cursor: pointer;
+  }
+  
+  .timer__btn--start {
+    background: #00b84c;
+  }
+  
+  .timer__btn--stop {
+    background: #ff0256;
+  }
+
+  .heading1{
+    color: #FFFFFF;
+    width: 250px;
+    margin-left: 495px;
+    padding: 10px 10px;
+    font-size: 20px;
+    background-color: rgba(182, 182, 201, 0.4);
+    border-radius: 5px;
+    border:none;
+    color: rgb(255, 255, 255);
+    box-shadow: 0px 1px 7px rgba(244, 244, 244, 0.25);
+    font-weight: 600;
+    cursor: pointer;}
+
+</style>
+    </head>
+
+    <body>
+    <div class="full body">
+        <h1 class="title"><b>Countdown Timer</b></h1>
+      
+        <table>
+            <thead>
+                <tr>
+                    <th>Enter Date</th>
+                    <th>Enter Time</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><input type="date" id="date" ></td>
+                    <td><input type="time" id="time" ></td>
+                </tr>
+            </tbody>
+        </table>
+        <button class="but" id="calculate">Start</button>
+        <button class="but" id="stop">Stop</button>
+        <button class="but"id="reset">Reset</button>
+       
+
+        <div class="countdown">
+            <div>
+                <p class="heading">DAY</p>
+                <div class="time" id="countdown-days">0</div>
+            </div>
+            <div>
+                <p class="heading">HOURS</p>
+                <div class="time" id="countdown-hours">0</div>
+            </div>
+            <div>
+                <p class="heading">MINUTES</p>
+                <div class="time" id="countdown-minutes">0</div>
+            </div>
+            <div>
+                <p class="heading">SECONDS</p>
+                <div class="time" id="countdown-seconds">0</div>
+            </div>
+        </div>
+<br>
+        <div>
+          <H2 class="heading1"> Instant Minute Timer </H2>
+        </div>
+
+        <div class="ABC">
+            <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+            <div class="timer"></div>
+        </div>
+
+        <script>
+           window.onload = () => {
+    document.querySelector('#calculate').onclick = calculate;
+    document.querySelector('#reset').onclick = reset;
+}
+
+function calculate () {
+    const date = document.querySelector("#date").value;
+    const time = document.querySelector("#time").value;
+
+    const stop = document.querySelector('#stop');
+    
+    const endTime = new Date(date + " " + time);
+
+    const interval = setInterval(() => calculateTime(endTime), 1000);
+
+    stop.addEventListener('click', () => {
+        clearInterval(interval);
+    })
+}
+
+function calculateTime(endTime) {
+    const currentTime = new Date();
+
+    const days = document.querySelector('#countdown-days');
+    const hours = document.querySelector('#countdown-hours');
+    const minutes = document.querySelector('#countdown-minutes');
+    const seconds = document.querySelector('#countdown-seconds');
+
+    if (endTime > currentTime) {
+        const timeLeft = (endTime - currentTime) / 1000;
+
+        console.log(timeLeft);
+        days.innerText = Math.floor(timeLeft / (24 * 60 * 60));
+        hours.innerText = Math.floor((timeLeft / (60 * 60)) % 24);
+        minutes.innerText = Math.floor((timeLeft / 60) % 60);
+        seconds.innerText = Math.floor(timeLeft % 60);
+    } else {
+        days.innerText = 0
+        hours.innerText = 0
+        minutes.innerText = 0
+        seconds.innerText = 0
+    }
+}
+
+function reset() {
+    document.querySelector('#countdown-days').innerText = 0;
+    document.querySelector('#countdown-hours').innerText = 0;
+    document.querySelector('#countdown-minutes').innerText = 0;
+    document.querySelector('#countdown-seconds').innerText = 0;
+} 
+
+class Timer {
+    constructor(root) {
+      root.innerHTML = Timer.getHTML();
+  
+      this.el = {
+        minutes: root.querySelector(".timer__part--minutes"),
+        seconds: root.querySelector(".timer__part--seconds"),
+        control: root.querySelector(".timer__btn--control"),
+        reset: root.querySelector(".timer__btn--reset")
+      };
+  
+      this.interval = null;
+      this.remainingSeconds = 0;
+  
+      this.el.control.addEventListener("click", () => {
+        if (this.interval === null) {
+          this.start();
+        } else {
+          this.stop();
+        }
+      });
+  
+      this.el.reset.addEventListener("click", () => {
+        const inputMinutes = prompt("Enter number of minutes:");
+  
+        if (inputMinutes < 60) {
+          this.stop();
+          this.remainingSeconds = inputMinutes * 60;
+          this.updateInterfaceTime();
+        }
+      });
+    }
+  
+    updateInterfaceTime() {
+      const minutes = Math.floor(this.remainingSeconds / 60);
+      const seconds = this.remainingSeconds % 60;
+  
+      this.el.minutes.textContent = minutes.toString().padStart(2, "0");
+      this.el.seconds.textContent = seconds.toString().padStart(2, "0");
+    }
+  
+    updateInterfaceControls() {
+      if (this.interval === null) {
+        this.el.control.innerHTML = <span class="material-icons">play_arrow</span>;
+        this.el.control.classList.add("timer__btn--start");
+        this.el.control.classList.remove("timer__btn--stop");
+      } else {
+        this.el.control.innerHTML = <span class="material-icons">pause</span>;
+        this.el.control.classList.add("timer__btn--stop");
+        this.el.control.classList.remove("timer__btn--start");
+      }
+    }
+  
+    start() {
+      if (this.remainingSeconds === 0) return;
+  
+      this.interval = setInterval(() => {
+        this.remainingSeconds--;
+        this.updateInterfaceTime();
+  
+        if (this.remainingSeconds === 0) {
+          this.stop();
+        }
+      }, 1000);
+  
+      this.updateInterfaceControls();
+    }
+  
+    stop() {
+      clearInterval(this.interval);
+  
+      this.interval = null;
+  
+      this.updateInterfaceControls();
+    }
+  
+    static getHTML() {
+      return `
+              <span class="timer_part timer_part--minutes">00</span>
+              <span class="timer__part">:</span>
+              <span class="timer_part timer_part--seconds">00</span>
+              <button type="button" class="timer_btn timerbtn--control timer_btn--start">
+                  <span class="material-icons">play_arrow</span>
+              </button>
+              <button type="button" class="timer_btn timer_btn--reset">
+                  <span class="material-icons">timer</span>
+              </button>
+          `;
+    }
+  }
+  
+  new Timer(
+      document.querySelector(".timer")
+  );
+
+  
+        </script>
+    </body>
+</html>

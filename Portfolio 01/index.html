@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head></head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portfolio</title>
+    <link rel="stylesheet" href="style.css"
+</head>
+<body>
+    <div id="header">
+        <div class="container">
+            <nav>
+                <img src="image copy.png" alt="Image 1" width="300px" height="80px">
+                <div class="nav-item">
+
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Portfolio</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+
+            </div>
+            </nav>
+            <div class="header-text">
+                <BR>
+                <BR>
+                <BR>
+                <BR>     
+                <BR>       
+                <h1>Hi i'm <span>Aditya Sharma</span><br>and this is my Portfolio.</h1>
+            </div>
+        </div>
+    </div>
+
+<!--------------------about------------------------->
+
+<div id="about">
+    <div class="container">
+        <div class="row">
+            <div class="about-col-1">
+                <img src="one.png">
+            </div>
+            <div class="about-col-2">
+                <h1 class="sub-title">About me</h1>
+                <p>Hello, I'm Aditya Sharma, currently pursuing B.Tech at Chitkara University in my second semester. Hailing from Faridabad, Haryana, I have a deep passion for coding. Beyond academics, you'll often find me engaging in outdoor activities, with volleyball being a personal favorite.</p>
+
+                <div class="tab-titles">
+                    <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                    <p class="tab-links" onclick="opentab('experience')">Experience</p>
+                    <p class="tab-links" onclick="opentab('education')">Educations</p>
+                </div>
+                <div class="tab-contents active-tab" id="skills">
+                    <ul>
+                        <li><span>Portfolio</span><br>Designing web interface</li>
+                        <li><span>Web Development</span><br>Web app Development</li>
+                        <li><span>App Development</span><br>Android/ios app Development</li>
+                    </ul>
+                    
+                </div>
+
+                <div class="tab-contents" id="experience">
+                    <ul>
+                        <li><span>2022</span><br>Python Language</li>
+                        <li><span>2023</span><br>Web Development</li>    
+                        <li><span>2024</span><br>C Language</li>
+                    </ul>
+                    
+                </div>
+
+                <div class="tab-contents" id="education">
+                    <ul>
+                        <li><span>2020</span><br>10TH from G.B.N Senior Secondary School</li>
+                        <li><span>2023</span><br>12TH from G.B.N Senior Secondary School</li>
+                        <li><span>2024</span><br>Currently pursuing B.tech from Chitkara University</li>
+                    </ul>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    var tablinks = document.getElementsByClassName("tab-links");
+    var tabcontents = document.getElementsByClassName("tab-contents");
+
+    function opentab(tabname){
+        for(tablink of tablinks){
+            tablink.classList.remove("active-links");
+        }
+        for(tabcontent of tabcontents){
+            tabcontent.classList.remove("active-tab");
+        }
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab");
+    }
+</script>
+    
+</body>
+</html>
